@@ -147,10 +147,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             object-fit: cover;
-            border-radius: 50%;
+            /* border-radius: 50%; */
             z-index: 2;
         }
 
