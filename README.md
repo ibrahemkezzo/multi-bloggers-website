@@ -107,7 +107,7 @@ project-root/
 
     For support or inquiries, reach out via:
 
-    Email: ibrahemkezzo@gmail.com
+    Email: ibrahemkezzo.w@gmail.com
     Twitter/X: https://x.com/IbrahemKezzo
     Facebook: https://www.facebook.com/share/15tcksMggo/
     LinkedIn: https://www.linkedin.com/in/ibrahem-kezzo-393556282

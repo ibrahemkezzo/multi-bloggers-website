@@ -69,7 +69,7 @@
                 <div class="col-lg-4 text-lg-start">
                     Copyright &copy; Your Website 2025
                     <br>
-                        by<a href="mailto:ibrahemkezzo@gmail.com"> ibrahem kezzo</a>
+                        by<a href="mailto:ibrahemkezzo.w@gmail.com"> ibrahem kezzo</a>
                 </div>
                 <div class="col-lg-4 my-3 my-lg-0">
                     <a class="btn btn-dark btn-social mx-2" href="https://x.com/IbrahemKezzo?t=7z-dlnJbgfgmltrA8nul2w&s=09" aria-label="Twitter"><i
