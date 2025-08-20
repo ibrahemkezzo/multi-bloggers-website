@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,10 +19,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('password'),
+            'is_admin' => true,
+        ]);
 
                 // Create 10 users
         // User::factory()->count(10)->create();
@@ -30,9 +33,9 @@ class DatabaseSeeder extends Seeder
         // Category::factory()->count(5)->create();
 
         // Create 50 blogs, linking to existing users and categories
-        Blog::factory()->count(20)->create([
-            'user_id' => fn () => User::inRandomOrder()->first()->id,
-            'category_id' => fn () => Category::inRandomOrder()->first()->id,
-        ]);
+        // Blog::factory()->count(20)->create([
+        //     'user_id' => fn () => User::inRandomOrder()->first()->id,
+        //     'category_id' => fn () => Category::inRandomOrder()->first()->id,
+        // ]);
     }
 }
