@@ -47,6 +47,7 @@ Route::delete('/category-destroy/{category}',[CategoryController::class,'destroy
 
 // Contact
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::view('/contact-us','frontend.contacts.send')->name('contact-us');
 
 // Admin Contact Management
 Route::middleware(['auth'])->group(function () {

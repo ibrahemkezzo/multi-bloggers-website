@@ -21,7 +21,7 @@
                         @auth
                             <li class="nav-item"><a class="nav-link" href="{{ route('blogs.user') }}">Your Blogs</a></li>
                         @endauth
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('contact-us')}}">Contact</a></li>
                     </ul>
                     @guest
                         <a class="navbar-brand ms-5 log-in" href="{{ route('login') }}">Log in</a>
