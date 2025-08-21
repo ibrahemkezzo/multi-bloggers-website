@@ -34,7 +34,7 @@ Route::get('/blog-new',[BlogController::class,'create'])->name('blogs.create')->
 Route::post('/blog-new',[BlogController::class,'store'])->name('blogs.store')->middleware('auth');
 Route::get('/blog-edit/{blog}',[BlogController::class,'edit'])->name('blogs.edit')->middleware('auth');
 Route::put('/blog-edit/{blog}',[BlogController::class,'update'])->name('blogs.update')->middleware('auth');
-Route::post('/blog-destroy/{blog}',[BlogController::class,'destroy'])->name('blogs.destroy')->middleware('auth');
+Route::delete('/blog-destroy/{blog}',[BlogController::class,'destroy'])->name('blogs.destroy')->middleware('auth');
 
 
 Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
@@ -43,7 +43,7 @@ Route::get('/category-new',[CategoryController::class,'create'])->name('categori
 Route::post('/category-new',[CategoryController::class,'store'])->name('categories.store')->middleware('auth');
 Route::get('/category-edit/{category}',[CategoryController::class,'edit'])->name('categories.edit')->middleware('auth');
 Route::put('/category-edit/{category}',[CategoryController::class,'update'])->name('categories.update')->middleware('auth');
-Route::post('/category-destroy/{category}',[CategoryController::class,'destroy'])->name('categories.destroy')->middleware('auth');
+Route::delete('/category-destroy/{category}',[CategoryController::class,'destroy'])->name('categories.destroy')->middleware('auth');
 
 // Contact
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

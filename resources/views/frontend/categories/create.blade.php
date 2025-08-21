@@ -1,14 +1,14 @@
 @extends('layouts.frontend')
 
 @section('body')
-    <x-frontend.masthead
+    {{-- <x-frontend.masthead
         subheading="Create a New Category"
         heading="Organize Your Content"
         link="{{ route('categories.index') }}"
         link-text="Back to Categories"
-    />
+    /> --}}
 
-    <section class="page-section" id="create-category">
+    <section class="page-section mt-5" id="create-category">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Add a Category</h2>
@@ -39,7 +39,8 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary btn-xl text-uppercase">Create Category</button>
+                        <button type="submit" class="btn btn-new btn-xl text-uppercase">Create Category</button>
+                        <a href="{{route('categories.index')}}" class="btn btn-delete btn-xl text-uppercase me-2"> Back to Categories</a>
                     </form>
                 </div>
             </div>
@@ -49,6 +50,13 @@
 
 @push('styles')
     <style>
+        #mainNav {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            border: none;
+            background-color: #212529;
+            transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+            }
         #create-category .form-label {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -95,4 +103,5 @@
             this.style.height = this.scrollHeight + 'px';
         });
     </script>
+
 @endpush

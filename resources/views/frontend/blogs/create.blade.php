@@ -67,6 +67,7 @@
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-new btn-xl text-uppercase">Publish Blog</button>
+                        <a href="{{route('blogs.index')}}" class="btn btn-delete btn-xl text-uppercase me-2"> Back to Blogs</a>
                     </form>
                 </div>
             </div>

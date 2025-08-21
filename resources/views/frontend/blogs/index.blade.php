@@ -29,7 +29,7 @@ link-text="Create New Blog"
                                 @endif
                                 <div class="blog-card-body">
                                     <h4 class="blog-card-title"><a href="{{ route('blogs.show', $blog->id) }}" class="text-primary">{{ $blog->title }}</a></h4>
-                                    <p class="blog-card-excerpt ">{{ Str::limit($blog->excerpt, 100) }}</p>
+                                    <p class="blog-card-excerpt text-muted">{{ Str::limit($blog->excerpt, 100) }}</p>
                                     <p class="blog-card-meta text-muted">By {{ $blog->user->name }} | {{ $blog->category->name }} | {{ $blog->published_at ? $blog->published_at->format('M d, Y') : 'Draft' }}</p>
                                 </div>
                             </article>
@@ -69,7 +69,7 @@ link-text="Create New Blog"
         }
         .blog-card-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -80,19 +80,32 @@ link-text="Create New Blog"
         .blog-card-title a:hover {
             text-decoration: underline;
         }
-        .blog-card-excerpt {
+        /* .blog-card-excerpt {
             font-family: 'Roboto Slab', serif;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            line-height: 1.5;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.5rem;
         }
         .blog-card-meta {
             font-size: 0.875rem;
             margin-bottom: 0;
-        }
+        } */
         @media (max-width: 768px) {
-            .blog-card-img {
-                height: 150px;
+
+              #category-blogs .blog-card {
+            border: 1px solid #b99950;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1% 8%;
+            height: 24rem;
+            width: 27rem;
+            display: center;
+            background-color: #0000001c;
+            transition: box-shadow 0.3s ease;
+        }
+            #category-blogs .blog-card-img {
+                height: 200px;
+                width: 100%;
             }
             .blog-card-title {
                 font-size: 1.1rem;

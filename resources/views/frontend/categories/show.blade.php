@@ -25,12 +25,10 @@
                     <div class="col-lg-4 col-md-6">
                         <article class="blog-card">
                             @if ($blog->featured_image)
-                                <img src="{{ asset('storage/' . $blog->featured_image) }}" alt="{{ $blog->title }}"
-                                    class="blog-card-img img-fluid">
-                            @else
-                                <img src="https://via.placeholder.com/400x250" alt="{{ $blog->title }}"
-                                    class="blog-card-img img-fluid">
-                            @endif
+                                    <img src="{{ asset('storage/' . $blog->featured_image) }}" alt="{{ $blog->title }}" class="blog-card-img img-fluid">
+                                @else
+                                    <img src="https://via.placeholder.com/400x250" alt="{{ $blog->title }}" class="blog-card-img img-fluid">
+                                @endif
                             <div class="blog-card-body">
                                 <h4 class="blog-card-title"><a href="{{ route('blogs.show', $blog->id) }}"
                                         class="text-primary">{{ $blog->title }}</a></h4>
@@ -77,7 +75,7 @@
 
         }
 
-        #category-blogs .blog-card-title {
+        /* #category-blogs .blog-card-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
@@ -87,13 +85,13 @@
         #category-blogs .blog-card-title a {
             color: #007bff;
             text-decoration: none;
-        }
+        } */
 
         #category-blogs .blog-card-title a:hover {
             text-decoration: underline;
         }
 
-        #category-blogs .blog-card-excerpt {
+        /* #category-blogs .blog-card-excerpt {
             font-family: 'Roboto Slab', serif;
             font-size: 1rem;
             margin-bottom: 10px;
@@ -103,11 +101,23 @@
         #category-blogs .blog-card-meta {
             font-size: 0.875rem;
             margin-bottom: 0;
-        }
+        } */
 
         @media (max-width: 768px) {
+              #category-blogs .blog-card {
+            border: 1px solid #b99950;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1% 8%;
+            height: 24rem;
+            width: 27rem;
+            display: center;
+            background-color: #0000001c;
+            transition: box-shadow 0.3s ease;
+        }
             #category-blogs .blog-card-img {
-                height: 150px;
+                height: 200px;
+                width: 100%;
             }
 
             #category-blogs .blog-card-title {

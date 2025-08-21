@@ -6,8 +6,8 @@
     $link = route('categories.create');
 }
 else{
-    $link_text = 'Show all Category';
-    $link = route('categories.index');
+    $link_text = 'Show all Blogs';
+    $link = route('blogs.index');
 }
 
 ?>

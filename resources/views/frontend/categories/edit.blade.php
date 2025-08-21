@@ -1,12 +1,12 @@
 @extends('layouts.frontend')
 
 @section('body')
-    <x-frontend.masthead
+    {{-- <x-frontend.masthead
         subheading="Edit Category"
         heading="Update Your Category"
         link="{{ route('categories.show', $category->id) }}"
         link-text="Back to Category"
-    />
+    /> --}}
 
     <section class="page-section" id="edit-category">
         <div class="container">
@@ -46,7 +46,9 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary btn-xl text-uppercase">Update Category</button>
+                        <button type="submit" class="btn btn-new btn-xl text-uppercase">Update Category</button>
+
+                        <a href="{{route('categories.show',$category->id)}}" class="btn btn-delete btn-xl text-uppercase me-2"> Back to category</a>
                     </form>
                 </div>
             </div>
@@ -56,9 +58,20 @@
 
 @push('styles')
     <style>
+        #mainNav {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            border: none;
+            background-color: #212529;
+            transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+            }
+        #edit-category{
+            margin-top: 100px;
+            }
         #edit-category .form-label {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+
             color: #212529;
         }
         #edit-category .form-control {

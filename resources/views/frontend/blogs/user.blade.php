@@ -25,7 +25,7 @@
                             {{asset('frontend/assets/img/about/1.jpg')}}
                             @endif
                             "
-                            alt="..." />
+                            alt="..." style="width: 100%; height: 100%;" />
                         </div>
                         <a href="{{ route('blogs.show', $blog->id) }}" class="timeline-panel">
                             <div class="timeline-heading">

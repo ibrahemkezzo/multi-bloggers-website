@@ -23,31 +23,31 @@
                         @endauth
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
+                    @guest
+                        <a class="navbar-brand ms-5 log-in" href="{{ route('login') }}">Log in</a>
+                    @endguest
+                    @auth
+                        <div class="dropdown ms-5">
+                            <a class="navbar-brand dropdown-toggle" href="#" role="button" id="userDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+                                @if (Auth::user()->is_admin)
+                                <li><a class="dropdown-item" href="{{ route('contact.index') }}">Emails</a></li>
+                                @endif
+                                <li><a class="dropdown-item" href="{{ route('blogs.user') }}">My Blogs</a></li>
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    @endauth
                 </div>
-                @guest
-                    <a class="navbar-brand ms-5 log-in" href="{{ route('login') }}">Log in</a>
-                @endguest
-                @auth
-                    <div class="dropdown ms-5">
-                        <a class="navbar-brand dropdown-toggle" href="#" role="button" id="userDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::user()->name }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
-                            @if (Auth::user()->is_admin)
-                            <li><a class="dropdown-item" href="{{ route('contact.index') }}">Emails</a></li>
-                            @endif
-                            <li><a class="dropdown-item" href="{{ route('blogs.user') }}">My Blogs</a></li>
-                            <li>
-                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item">Logout</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                @endauth
 
             </div>
         </nav>
